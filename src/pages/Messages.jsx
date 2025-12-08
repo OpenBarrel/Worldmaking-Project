@@ -16,7 +16,7 @@ export default function Messages(props) {
         fetch("https://cs571api.cs.wisc.edu/rest/f25/bucket/worldmakingmessages", {
             method: "GET",
             headers: {
-                "X-CS571-ID": CS571.getBadgerId()
+                "X-CS571-ID": "bid_4467b10c1dfb418fe8027efcd69b2f29d7f60931cfa07d7b8f9d936be5e36adc"
             }
         })
         .then(response => response.json())
@@ -37,7 +37,7 @@ export default function Messages(props) {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
-                "X-CS571-ID": CS571.getBadgerId()
+                "X-CS571-ID": 'bid_4467b10c1dfb418fe8027efcd69b2f29d7f60931cfa07d7b8f9d936be5e36adc'
             },
             body: JSON.stringify(newMsg),
         }).then(res => {
