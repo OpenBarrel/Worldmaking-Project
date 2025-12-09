@@ -156,10 +156,10 @@ export default function Message(props) {
                 <Card key={index} className="mb-2">
                     <Card.Body className="d-flex justify-content-between align-items-center">
                         <Card.Text>{comment.content}</Card.Text>
-                        {username != null && username != '' ? <div>
-                            <Button variant="outline-primary" onClick={() => handleLikeDislike(comment, index, true)}>{comment.likes.length}<i className={comment.likes.includes(username) ? "bi bi-hand-thumbs-up-fill" : "bi bi-hand-thumbs-up"}></i></Button>
-                            <Button variant="outline-primary" onClick={() => handleLikeDislike(comment, index, false)} className="ms-2">{comment.dislikes.length}<i className={comment.dislikes.includes(username) ? "bi bi-hand-thumbs-down-fill" : "bi bi-hand-thumbs-down"}></i></Button>
-                        </div> : ''}
+                        <div>
+                            <Button disabled={username == null || username === ''}variant="outline-primary" onClick={() => handleLikeDislike(comment, index, true)}>{comment.likes.length}<i className={comment.likes.includes(username) ? "bi bi-hand-thumbs-up-fill" : "bi bi-hand-thumbs-up"}></i></Button>
+                            <Button disabled={username == null || username === ''} variant="outline-primary" onClick={() => handleLikeDislike(comment, index, false)} className="ms-2">{comment.dislikes.length}<i className={comment.dislikes.includes(username) ? "bi bi-hand-thumbs-down-fill" : "bi bi-hand-thumbs-down"}></i></Button>
+                        </div> 
                     </Card.Body>
                 </Card>))
             : 
