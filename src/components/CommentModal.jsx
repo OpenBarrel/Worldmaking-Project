@@ -12,8 +12,12 @@ export default function CommentModal(props) {
     }
 
     function handleSubmit() {
-        props.newComment(message.current);
-        handleClose();
+        if (message.current.content != '') {
+            props.newComment(message.current);
+            handleClose();
+        } else {
+            alert("Please enter a comment!");
+        }
     }
 
     return(

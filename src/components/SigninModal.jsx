@@ -3,15 +3,19 @@ import { useRef, useEffect } from "react";
 
 export default function SigninModal(props) {
 
-    const username = useRef();
+    const username = useRef('');
 
     function handleClose() {
         props.setVisible(false);
     }
 
     function handleSubmit() {
-        props.signin(username.current);
-        handleClose();
+        if (username.current != '') {
+            props.signin(username.current);
+            handleClose();
+        } else {
+            alert("Please enter a username!");
+        }
     }
 
     function handleSignout() {

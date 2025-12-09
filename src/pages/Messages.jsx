@@ -72,7 +72,7 @@ export default function Messages(props) {
         loadMessages();
     }, [])
 
-    return <div className="d-flex flex-column" style={{ height: "calc(100vh - 100px)" }}>
+    return <div className="d-flex flex-column" style={{ height: "calc(100vh - 110px)" }}>
             <Container fluid className="flex-grow-1 d-flex flex-column border-bottom border-dark" style={{ overflow: "hidden" }}>
                 <MessageModal visible={showMessageModal} setVisible={setShowMessageModal} newMessage={handleNewMessage}/>
                 <Row className="w-100 no-gutters flex-grow-1" style={{ overflow: "auto" }}>
@@ -83,7 +83,7 @@ export default function Messages(props) {
                 
             </Container>
             <div className="d-flex justify-content-center align-items-center m-3">
-                <Button variant="primary" className="w-100" onClick={handleNewMessageClick}>Create Post</Button>
+                <Button variant="success" className="w-100" onClick={handleNewMessageClick}>Create Post</Button>
             </div>
         </div>
 }

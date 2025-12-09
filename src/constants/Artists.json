@@ -1,0 +1,20 @@
+[
+    {
+        "name": "Linda Martell",
+        "bio": "The lost diamond of country music",
+        "summary": "Linda Martell was a pioneer of the country genre and is considered the first hugely successful Black female artist in the space. Additionally, she was also the first Black woman to perform at the Grand Ole Opry. However, despite her overwhelming success, Martell was subjected to intense racism from both audiences and industry insiders. When her final single underperformed, she was ultimately dropped by her label and departed from Nashville and country music shortly thereafter. In 2024, Linda Martell was featured in SPAGHETTII alongside Beyoncé and Shaboozey, where she opens with lyrics alluding to the problems inherent with 'genres'.",
+        "image": "./LindaMartell.jpg"
+    },
+    {
+        "name": "Beyoncé",
+        "bio": "A resistance to Nashville's barriers",
+        "summary": "Beyoncé is a world-renowned artist whose work spans a wide range of genres, including pop, R&B, and hip-hop. That being said, her more recent albums, as well as various songs from the past, dive heavily into the country music genre. Most notably, Beyoncé's immensely popular album Cowboy Carter features country song after country song, with TEXAS HOLD `EM ascending to the number one spot on the Billboard. Despite this monumental success, Beyoncé faced intense criticism, both from audience racism and genre policing, as well as resistance from Nashville to play her album on the radio.",
+        "image": "./Beyonce.jpg"
+    },
+    {
+        "name": "Lil Nas X",
+        "bio": "A cultural phenomenon kicked out",
+        "summary": "Lil Nas X is a major 21st-century artist whose songs often blend elements of hip-hop, pop, rap, trap, and country music. Old Town Road, one of Lil Nas X's earlier pieces, mixed elements of country with other genres and quickly became a global hit. Despite this success, though, Old Town Road was removed from the Hot Country Songs chart. Nashville claimed this was done on the grounds of 'lacking sufficient country elements', but ultimately sparked fierce debate and accusations of racism and genre gatekeeping. Even today, despite the remix featuring the renowned country star Billy Ray Cyrus, Old Town Road was never re-added to the country charts.",
+        "image": "./Nas.jpg"
+    }
+]

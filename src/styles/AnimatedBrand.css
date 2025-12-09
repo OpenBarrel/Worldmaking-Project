@@ -1,0 +1,9 @@
+.animated-brand {
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  display: inline-block;
+}
+
+.animated-brand:hover {
+  opacity: 0.8;
+  transform: scale(1.05);
+}

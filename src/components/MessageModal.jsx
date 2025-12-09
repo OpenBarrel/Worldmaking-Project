@@ -13,8 +13,12 @@ export default function MessageModal(props) {
     }
 
     function handleSubmit() {
-        props.newMessage(message.current);
-        handleClose();
+        if (message.current.title === '' || message.current.content === '') {
+            alert('Please complete all fields!');
+        } else {
+            props.newMessage(message.current);
+            handleClose();
+        }
     }
 
     return(
