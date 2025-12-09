@@ -1,7 +1,8 @@
 import MessageBoard from "../components/MessageBoard"
 import MessageModal from "../components/MessageModal"
-import { Button } from "react-bootstrap"
+import { Button, Container, Row, Col } from "react-bootstrap"
 import { useState, useEffect } from "react"
+import 'bootstrap-icons/font/bootstrap-icons.css';
 
 export default function Messages(props) {
 
@@ -21,7 +22,7 @@ export default function Messages(props) {
         })
         .then(response => response.json())
         .then (data => {
-            setMessages(Object.entries(data.results));
+            setMessages(Object.entries(data.results).reverse());
         });
     }
 
@@ -30,7 +31,8 @@ export default function Messages(props) {
         const newMsg = {
             title: msg.title,
             content: msg.content,
-            poster: 'Anonymous'
+            poster: sessionStorage.getItem('username') ?? 'Anonymous',
+            date: new Date().toISOString()
         }
 
         fetch("https://cs571api.cs.wisc.edu/rest/f25/bucket/worldmakingmessages", {
@@ -42,7 +44,6 @@ export default function Messages(props) {
             body: JSON.stringify(newMsg),
         }).then(res => {
             if (res.status === 200) {
-                alert("Successfully posted!");
                 loadMessages();
             } else {
                 alert("Failed to post message.");
@@ -54,12 +55,11 @@ export default function Messages(props) {
         fetch(`https://cs571api.cs.wisc.edu/rest/f25/bucket/worldmakingmessages?id=${id}`, {
             method: "DELETE",
             headers: {
-                "X-CS571-ID": CS571.getBadgerId()
+                "X-CS571-ID": 'bid_4467b10c1dfb418fe8027efcd69b2f29d7f60931cfa07d7b8f9d936be5e36adc'
             }
         })
         .then(res => {
             if (res.status === 200) {
-                alert("Successfully deleted!");
                 loadMessages();
             } else {
                 alert("Failed to delete message.");
@@ -72,9 +72,18 @@ export default function Messages(props) {
         loadMessages();
     }, [])
 
-    return <div>
-        <MessageModal visible={showModal} setVisible={setShowModal} newMessage={handleNewMessage}/>
-        <Button variant="primary" className="mb-3" onClick={handleNewMessageClick}>New Message</Button>
-        <MessageBoard messages={messages} remove={handleRemoveMessage}/>
-    </div>
+    return <div className="d-flex flex-column" style={{ height: "calc(100vh - 75px)" }}>
+            <Container fluid className="flex-grow-1 d-flex flex-column border-bottom border-dark" style={{ overflow: "hidden" }}>
+                <MessageModal visible={showModal} setVisible={setShowModal} newMessage={handleNewMessage}/>
+                <Row className="w-100 no-gutters flex-grow-1" style={{ overflow: "auto" }}>
+                    <Col className="justify-content-between d-flex flex-column" >
+                        <MessageBoard messages={messages} remove={handleRemoveMessage}/>
+                    </Col>
+                </Row>
+                
+            </Container>
+            <div className="d-flex justify-content-center align-items-center m-3">
+                <Button variant="primary" className="w-100" onClick={handleNewMessageClick}>Create Post</Button>
+            </div>
+        </div>
 }

@@ -13,7 +13,6 @@ export default function MessageModal(props) {
     }
 
     function handleSubmit() {
-        console.log(message.current);
         props.newMessage(message.current);
         handleClose();
     }

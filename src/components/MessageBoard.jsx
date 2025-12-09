@@ -3,13 +3,13 @@ import Message from "./Message"
 
 export default function MessageBoard(props) {
 
-    return <Container fluid>
-        <Row>
+    return <Container fluid className="d-flex flex-column" style={{ overflow: "auto" }}>
             {props.messages?.map((msg, index) => {
-                return <Col key={index} xs={12} md={6} lg={4} xl={3}>
-                    <Message {...msg} remove={props.remove}/>
-                </Col>
+                return <Row key={index}>
+                    <Col>
+                        <Message {...msg} remove={props.remove}/>
+                    </Col>
+                </Row>
             })}
-        </Row>
     </Container>
 }
