@@ -7,7 +7,7 @@ export default function MessageBoard(props) {
             {props.messages?.map((msg, index) => {
                 return <Row key={index}>
                     <Col>
-                        <Message {...msg} remove={props.remove}/>
+                        <Message {...msg} remove={props.remove} loadMessages={props.loadMessages}/>
                     </Col>
                 </Row>
             })}

@@ -6,11 +6,11 @@ import 'bootstrap-icons/font/bootstrap-icons.css';
 
 export default function Messages(props) {
 
-    const [showModal, setShowModal] = useState(false);
+    const [showMessageModal, setShowMessageModal] = useState(false);
     const [messages, setMessages] = useState([...JSON.parse(localStorage.getItem('messages') || '[]')]);
 
     function handleNewMessageClick() {
-        setShowModal(true);
+        setShowMessageModal(true);
     }
 
     function loadMessages() {
@@ -72,12 +72,12 @@ export default function Messages(props) {
         loadMessages();
     }, [])
 
-    return <div className="d-flex flex-column" style={{ height: "calc(100vh - 75px)" }}>
+    return <div className="d-flex flex-column" style={{ height: "calc(100vh - 100px)" }}>
             <Container fluid className="flex-grow-1 d-flex flex-column border-bottom border-dark" style={{ overflow: "hidden" }}>
-                <MessageModal visible={showModal} setVisible={setShowModal} newMessage={handleNewMessage}/>
+                <MessageModal visible={showMessageModal} setVisible={setShowMessageModal} newMessage={handleNewMessage}/>
                 <Row className="w-100 no-gutters flex-grow-1" style={{ overflow: "auto" }}>
                     <Col className="justify-content-between d-flex flex-column" >
-                        <MessageBoard messages={messages} remove={handleRemoveMessage}/>
+                        <MessageBoard messages={messages} remove={handleRemoveMessage} loadMessages={loadMessages}/>
                     </Col>
                 </Row>
                 

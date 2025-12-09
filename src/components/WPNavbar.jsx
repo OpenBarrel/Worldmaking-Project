@@ -16,8 +16,8 @@ export default function WPNavbar(props) {
         <SigninModal visible={visible} setVisible={setVisible} signin={handleSignIn} signout={handleSignOut}/>
         <Container fluid>
             <Nav className='me-auto'>
-                <Nav.Link href="#/">Home</Nav.Link>
-                <Nav.Link href="#/messages">Messages</Nav.Link>
+                <Nav.Link href="#/"><p className="fs-4">Home</p></Nav.Link>
+                <Nav.Link href="#/messages"><p className="fs-4">Messages</p></Nav.Link>
             </Nav>
             
             <Button variant="outline-light" onClick={handleSignInClick}>{username !== '' ? 'Change Username': 'Sign In'}</Button>
