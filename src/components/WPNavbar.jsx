@@ -7,7 +7,6 @@ export default function WPNavbar(props) {
 
     const {username, handleSignIn, handleSignOut} = useContext(UsernameContext);
     const [visible, setVisible] = useState(false);
-    const [signedIn, setSignedIn] = useState(sessionStorage.getItem("username") !== null);
 
     function handleSignInClick() {
         setVisible(true);
@@ -21,7 +20,7 @@ export default function WPNavbar(props) {
                 <Nav.Link href="#/messages">Messages</Nav.Link>
             </Nav>
             
-            <Button variant="outline-light" onClick={handleSignInClick}>{signedIn ? 'Change Username': 'Sign In'}</Button>
+            <Button variant="outline-light" onClick={handleSignInClick}>{username !== '' ? 'Change Username': 'Sign In'}</Button>
         </Container>
     </Navbar>
 }
