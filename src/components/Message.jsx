@@ -165,7 +165,7 @@ export default function Message(props) {
             : 
             ''}
             <div className="d-flex justify-content-center">
-                {props[1].comments ? <Button variant="primary" onClick={handleCommentsClick}>See Comments</Button>: ''}
+                {props[1].comments ? <Button variant="primary" onClick={handleCommentsClick}>{showComments ? 'Hide Comments' : 'See Comments'}</Button>: ''}
                 <Button variant="primary" className="ms-3" onClick={handleNewCommentClick}>Comment</Button>
             </div>
         </Card.Footer>
